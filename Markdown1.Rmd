@@ -1,0 +1,16 @@
+---
+title: "Datenprojekt1"
+author: "R.C. Wallner"
+date: "2024-11-22"
+output: word_document
+---
+
+```{R,include=FALSE}
+library(haven)
+setwd("C:/Users/walln/OneDrive/Desktop/LMU Ordner/Studiumsunterlagen/econ_WiSe_3/Öko1")
+data <- read_dta(file = "Datenprojekt.dta")
+dim(data)
+View(data)
+setwd("C:/Users/walln/OneDrive/Desktop/LMU Ordner/Studiumsunterlagen/stat_WiSe1/GitRepositories/DatenprojektXiaJoRu")
+```
+
