@@ -62,9 +62,26 @@ barplot(Gründe$nj, names.arg= Gründe$Relevante_Variablen2,
 #am zweit häufigsten ist der Grund, dass Vorgesetzten die Anwesenheit "sehr wichtig" ist
 
 ###4
-
-
-
-
-
+df6 <- factor(na.omit(subset( data.frame( 
+                         wunsch3 = data$mheimwunsch, 
+                         HO = data$bhomeoff),
+              HO == 0))[,1],levels=1:3, labels = c(rep("Wunsch",2),"Kein Wunsch") )
+#df6 ist ein Vektor der alle mheimwunsch für HO = 0 herausfindet, und diese dann in
+#Wunscht besteht: Werte 1,2 und Wunsch besteht nicht: Wert 3 aufteilt
+barplot(table(df6), main = "wünschen sich Arbeitnehmer \n in Betrieben, die kein HO anbieten
+        von, zu Hause aus zu arbeiten?",
+        col=c("lightblue","darkblue"))
+###5
+Wichtige_Variablen <- character()
+for(i in 1:ncol(data)){
+  if( grepl("mheimwunsch_", colnames(data)[i])){
+    Wichtige_Variablen <- c(Wichtige_Variablen, colnames(data)[i])
+  }
+}
+Index2 <- which(colnames(data) %in% Wichtige_Variablen)
+df7 <- na.omit(data[, Index2])
+Gründe2 <- c("fahren","freiz.","fam","qual.","h_erhöhen")
+Häufigkeiten <- apply(df7, 2, sum)
+barplot(Häufigkeiten, names.arg=Gründe2,
+        col="lightblue")
 
