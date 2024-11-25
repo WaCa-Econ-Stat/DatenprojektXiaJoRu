@@ -1,0 +1,266 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Datenprojekt1},
+  pdfauthor={R.C. Wallner},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Datenprojekt1}
+\author{R.C. Wallner}
+\date{2024-11-22}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#1}
+\NormalTok{df1 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Betrieb =}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{ID\_betnr,}\AttributeTok{HO =}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{bhomeoff)}
+\NormalTok{df2 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Betrieb =} \DecValTok{1}\NormalTok{, }\AttributeTok{HO =} \DecValTok{0}\NormalTok{) }\CommentTok{\#initialisieren mit Erstem Betrieb}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(df1))\{}
+  \ControlFlowTok{if}\NormalTok{( }\SpecialCharTok{!}\NormalTok{ (  df1[i,}\DecValTok{1}\NormalTok{] }\SpecialCharTok{\%in\%}\NormalTok{ df2[,}\DecValTok{1}\NormalTok{] ) )\{}
+\NormalTok{    df2 }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(df2, df1[i,])}
+\NormalTok{  \}}
+\NormalTok{\}}
+\CommentTok{\#Wenn die Betriebnummer noch nicht in der bisherigen Spalte 1 des neuen}
+\CommentTok{\#Datenrahmens aufgenommen wurde, dann wird die Zeile hinzugefügt }
+
+\FunctionTok{nrow}\NormalTok{(df2) }\SpecialCharTok{==} \FunctionTok{length}\NormalTok{(}\FunctionTok{unique}\NormalTok{(df1[,}\DecValTok{1}\NormalTok{])) }\CommentTok{\#TRUE heißt alle Betirb{-}Duplikate eliminert}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df2 }\OtherTok{\textless{}{-}}\NormalTok{ df2[}\SpecialCharTok{{-}}\FunctionTok{nrow}\NormalTok{(df2), ] }\CommentTok{\#Die NA{-}Betriebe kommen auch 1 mal ganz am Ende vor}
+\NormalTok{df2}\SpecialCharTok{$}\NormalTok{HO }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(df2}\SpecialCharTok{$}\NormalTok{HO, }\AttributeTok{levels=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Nein"}\NormalTok{,}\StringTok{"Ja"}\NormalTok{))}
+\NormalTok{Frequency\_Table }\OtherTok{\textless{}{-}} \FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(df2}\SpecialCharTok{$}\NormalTok{HO))}
+\NormalTok{Share\_HO }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(Frequency\_Table[}\DecValTok{2}\NormalTok{])}
+\NormalTok{Share\_HO}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3653137
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{barplot}\NormalTok{(Frequency\_Table, }\AttributeTok{main=}\StringTok{"Erlauben Betriebe Home Office?"}\NormalTok{,}
+        \AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"darkred"}\NormalTok{,}\StringTok{"darkgreen"}\NormalTok{), }\AttributeTok{horiz =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Markdown1_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#2}
+\NormalTok{df3 }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(df1, }\AttributeTok{Nutzen =}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{mheim)[df1}\SpecialCharTok{$}\NormalTok{HO}\SpecialCharTok{==}\DecValTok{1}\NormalTok{,]}
+\NormalTok{df4 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Betrieb =} \DecValTok{6}\NormalTok{, }\AttributeTok{HO =} \DecValTok{1}\NormalTok{, }\AttributeTok{Nutzen =} \DecValTok{1}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{2}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(df3))\{}
+\NormalTok{  enthält }\OtherTok{\textless{}{-}}\NormalTok{ F}
+  \ControlFlowTok{for}\NormalTok{(j }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{)\{}
+    \ControlFlowTok{if}\NormalTok{( }\FunctionTok{is.na}\NormalTok{(df3[i,j]) )\{enthält }\OtherTok{\textless{}{-}}\NormalTok{ T\}}
+\NormalTok{  \}}
+  \ControlFlowTok{if}\NormalTok{( }\SpecialCharTok{!}\NormalTok{enthält)\{}
+\NormalTok{    df4 }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(df4, df3[i,])}
+\NormalTok{  \}}
+\NormalTok{\}}
+\NormalTok{df4}\SpecialCharTok{$}\NormalTok{Nutzen }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(df4}\SpecialCharTok{$}\NormalTok{Nutzen, }\AttributeTok{levels=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{labels=} \FunctionTok{c}\NormalTok{(}
+  \StringTok{"Nutzt Möglichkeit nicht"}\NormalTok{, }\StringTok{"Nutzt Möglichkeit"}
+\NormalTok{))}
+\NormalTok{Frequency\_Use }\OtherTok{\textless{}{-}} \FunctionTok{prop.table}\NormalTok{(}\FunctionTok{table}\NormalTok{(df4}\SpecialCharTok{$}\NormalTok{Nutzen))}
+\NormalTok{Frequency\_Use }\CommentTok{\#Knapp 1/4 genau 23.63\% nutzen die HO Möglichkeit}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Nutzt Möglichkeit nicht       Nutzt Möglichkeit 
+##               0.7636816               0.2363184
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{barplot}\NormalTok{(Frequency\_Use, }\AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"darkblue"}\NormalTok{, }\StringTok{"lightblue"}\NormalTok{),}
+        \AttributeTok{main=} \StringTok{"Nutzt der Mitarbeiter die Möglichkeit zum Home Office?"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Markdown1_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#3}
+\NormalTok{Relevante\_Variablen }\OtherTok{\textless{}{-}} \FunctionTok{character}\NormalTok{()}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(}\FunctionTok{colnames}\NormalTok{(data)))\{}
+  \ControlFlowTok{if}\NormalTok{( }\FunctionTok{grepl}\NormalTok{(}\StringTok{"mheimnein\_"}\NormalTok{, }\FunctionTok{colnames}\NormalTok{(data)[i] )   )\{}
+\NormalTok{    Relevante\_Variablen }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{( Relevante\_Variablen, }\FunctionTok{colnames}\NormalTok{(data)[i])}
+\NormalTok{  \}}
+\NormalTok{\} }\CommentTok{\#alle Variablen, die mheimnein\_ enthalten, also hier zweckdienlich sind}
+\NormalTok{Index }\OtherTok{\textless{}{-}} \FunctionTok{which}\NormalTok{(}\FunctionTok{colnames}\NormalTok{(data)  }\SpecialCharTok{\%in\%}\NormalTok{ Relevante\_Variablen )}
+\NormalTok{df5 }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{( }\FunctionTok{cbind}\NormalTok{(df1, data}\SpecialCharTok{$}\NormalTok{mheim, data[,Index]) )}
+\NormalTok{nj }\OtherTok{\textless{}{-}} \FunctionTok{numeric}\NormalTok{()}
+\ControlFlowTok{for}\NormalTok{(j }\ControlFlowTok{in} \DecValTok{4}\SpecialCharTok{:}\FunctionTok{ncol}\NormalTok{(df5))\{}
+\NormalTok{  nj }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(nj, }\FunctionTok{sum}\NormalTok{(df5[,j]) )}
+\NormalTok{\}}
+\NormalTok{Relevante\_Variablen2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Erl."}\NormalTok{, }\StringTok{"Tech."}\NormalTok{, }\StringTok{"unmö."}\NormalTok{, }\StringTok{"vorg."}\NormalTok{, }\StringTok{"trenn."}\NormalTok{, }\StringTok{"team"}\NormalTok{, }\StringTok{"karr."}\NormalTok{)}
+\NormalTok{Gründe }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(Relevante\_Variablen2, nj)[}\FunctionTok{order}\NormalTok{(nj), ]}
+\FunctionTok{barplot}\NormalTok{(Gründe}\SpecialCharTok{$}\NormalTok{nj, }\AttributeTok{names.arg=}\NormalTok{ Gründe}\SpecialCharTok{$}\NormalTok{Relevante\_Variablen2,}
+        \AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{"darkblue"}\NormalTok{,}\DecValTok{2}\NormalTok{),}\FunctionTok{rep}\NormalTok{(}\StringTok{"blue"}\NormalTok{,}\DecValTok{3}\NormalTok{),}\FunctionTok{rep}\NormalTok{(}\StringTok{"lightblue"}\NormalTok{,}\DecValTok{2}\NormalTok{)) ,}
+        \AttributeTok{main=}\StringTok{"Grund für kein Home Office"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Markdown1_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Die meisten geben einfach nur an, dass es Ihnen nicht möglich ist,}
+\CommentTok{\#am zweit häufigsten ist der Grund, dass Vorgesetzten die Anwesenheit "sehr wichtig" ist}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#4}
+\NormalTok{df6 }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(}\FunctionTok{na.omit}\NormalTok{(}\FunctionTok{subset}\NormalTok{( }\FunctionTok{data.frame}\NormalTok{( }
+                         \AttributeTok{wunsch3 =}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{mheimwunsch, }
+                         \AttributeTok{HO =}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{bhomeoff),}
+\NormalTok{              HO }\SpecialCharTok{==} \DecValTok{0}\NormalTok{))[,}\DecValTok{1}\NormalTok{],}\AttributeTok{levels=}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{, }\AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{"Wunsch"}\NormalTok{,}\DecValTok{2}\NormalTok{),}\StringTok{"Kein Wunsch"}\NormalTok{) )}
+\CommentTok{\#df6 ist ein Vektor der alle mheimwunsch für HO = 0 herausfindet, und diese dann in}
+\CommentTok{\#Wunscht besteht: Werte 1,2 und Wunsch besteht nicht: Wert 3 aufteilt}
+\FunctionTok{barplot}\NormalTok{(}\FunctionTok{table}\NormalTok{(df6), }\AttributeTok{main =} \StringTok{"wünschen sich Arbeitnehmer }\SpecialCharTok{\textbackslash{}n}\StringTok{ in Betrieben, die kein HO anbieten}
+\StringTok{        von, zu Hause aus zu arbeiten?"}\NormalTok{,}
+        \AttributeTok{col=}\FunctionTok{c}\NormalTok{(}\StringTok{"lightblue"}\NormalTok{,}\StringTok{"darkblue"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Markdown1_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#5}
+\NormalTok{Wichtige\_Variablen }\OtherTok{\textless{}{-}} \FunctionTok{character}\NormalTok{()}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{ncol}\NormalTok{(data))\{}
+  \ControlFlowTok{if}\NormalTok{( }\FunctionTok{grepl}\NormalTok{(}\StringTok{"mheimwunsch\_"}\NormalTok{, }\FunctionTok{colnames}\NormalTok{(data)[i]))\{}
+\NormalTok{    Wichtige\_Variablen }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(Wichtige\_Variablen, }\FunctionTok{colnames}\NormalTok{(data)[i])}
+\NormalTok{  \}}
+\NormalTok{\}}
+\NormalTok{Index2 }\OtherTok{\textless{}{-}} \FunctionTok{which}\NormalTok{(}\FunctionTok{colnames}\NormalTok{(data) }\SpecialCharTok{\%in\%}\NormalTok{ Wichtige\_Variablen)}
+\NormalTok{df7 }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(data[, Index2])}
+\NormalTok{Gründe2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"fahren"}\NormalTok{,}\StringTok{"freiz."}\NormalTok{,}\StringTok{"fam"}\NormalTok{,}\StringTok{"qual."}\NormalTok{,}\StringTok{"h\_erhöhen"}\NormalTok{)}
+\NormalTok{Häufigkeiten }\OtherTok{\textless{}{-}} \FunctionTok{apply}\NormalTok{(df7, }\DecValTok{2}\NormalTok{, sum)}
+\FunctionTok{barplot}\NormalTok{(Häufigkeiten, }\AttributeTok{names.arg=}\NormalTok{Gründe2,}
+        \AttributeTok{col=}\StringTok{"lightblue"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Markdown1_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\end{document}
